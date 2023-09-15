@@ -9,14 +9,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <h2>The Rick and Morty API</h2>
+        <!-- <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/" class="nav-link" aria-current="page">Home</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </nav>

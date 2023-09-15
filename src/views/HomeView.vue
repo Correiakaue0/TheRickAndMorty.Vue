@@ -5,27 +5,37 @@ import CardComponent from '../components/CardComponent.vue';
 let personage = reactive(ref());
 var pages = 1;
 var lastPage = 0;
+var buttonPrevious;
+var buttonNext;
 
 onMounted(() => {
   FetchAPi(1);
+  buttonPrevious = document.querySelector('#buttonPrevious');
+  buttonNext = document.querySelector('#buttonNext');
+  buttonPrevious.disabled = true;
 })
 
 function NextPage(page){
 
-  if (page == lastPage) return;
+  buttonPrevious.disabled = false;
 
   page = page + 1;
 
+  if (page == lastPage) buttonNext.disabled = true;
+  
   FetchAPi(page)
 
   pages = page;
 }
 
 function PreviousPage(page){
-  page = page - 1;
 
-  if (page == 0) return;
+  if (buttonNext.disabled == true) buttonNext.disabled = false;
+
+  page = page - 1;
   
+  if (page == 1) buttonPrevious.disabled = true;
+
   FetchAPi(page)
 
   pages = page;
@@ -39,8 +49,6 @@ function FetchAPi(page){
     lastPage = response.info.pages;
   })
 }
-
-
 </script>
 
 <template>
@@ -48,9 +56,9 @@ function FetchAPi(page){
     <div class="container">
 
       <div class="mt-4 d-flex justify-content-around">
-        <button type="button" v-on:click="PreviousPage(pages)" class="btn btn-light">Anterior</button>
+        <button id="buttonPrevious" type="button" v-on:click="PreviousPage(pages)" class="btn btn-light">Anterior</button>
         <p class="text-light">Pagina {{ pages }} </p>
-        <button type="button" v-on:click="NextPage(pages)" class="btn btn-light">Próximo</button>
+        <button id="buttonNext" type="button" v-on:click="NextPage(pages)" class="btn btn-light">Próximo</button>
       </div>
 
       <div class="row mt-4">
