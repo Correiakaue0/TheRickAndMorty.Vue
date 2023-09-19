@@ -1,23 +1,22 @@
-<script setup>
+<script>
+export default {
+  data() {
+    return {
+      imagemUrl: '/logo.png'
+    };
+  }
+}
 </script>
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-body">
     <div class="container-fluid">
-      <img src="logo.png" style="width: 5%; margin-right:10px">
+      <img :src="imagemUrl" style="width: 5%; margin-right:10px">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expended="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <h2>The Rick and Morty API</h2>
-        <!-- <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link to="/" class="nav-link" aria-current="page">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
-          </li>
-        </ul> -->
       </div>
     </div>
   </nav>

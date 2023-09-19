@@ -72,6 +72,7 @@ function FetchAPi(page){
               :species="item.species"
               :origin="item.origin"
               :location="item.location"
+              :id="item.id"
               />
           </div>
         </div>
