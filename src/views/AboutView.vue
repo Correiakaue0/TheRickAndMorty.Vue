@@ -25,9 +25,9 @@ FetchAPi(personageProps.id);
             </div>
             <div class="col">
               <div class="card-body">
-                <h5 class="card-title text-light">teste</h5>
-                <p class="card-text text-light">teste - teste</p>
-                <p class="card-text text-light">sdfsd</p>
+                <h5 class="card-title text-light">{{ personage.name }}</h5>
+                <p class="card-text text-light">Genero : {{ personage.gender }} - Status : {{ personage.status }} - Especie : {{ personage.species }}   </p>
+                <p class="card-text text-light">Cidade : {{ personage.location.name }} - Planeta : {{ personage.origin.name }} </p>
               </div>
             </div>
         </div>
